@@ -1,0 +1,37 @@
+/* Brand tokens extracted from https://www.playinjector.com/ */
+:root {
+  /* fonts (Google Fonts: Open Sans, loaded in head.html) */
+  --heading-font-family: "Open Sans", open-sans-fallback, sans-serif;
+  --body-font-family: "Open Sans", open-sans-fallback, sans-serif;
+
+  /* colors */
+  --background-color: #222a38;
+  --text-color: #fff;
+  --link-color: #5c9fdc;
+  --link-hover-color: #8bbcea;
+  --light-color: #394459;
+  --dark-color: #131a26;
+  --muted-text-color: #e6e6e6;
+  --accent-blue: #2a7fd4;
+  --accent-blue-hover: #3a8fe4;
+  --accent-green: #1a9a1a;
+  --accent-green-hover: #22b022;
+
+  /* body sizes (source uses a compact 12-13px base) */
+  --body-font-size-m: 13px;
+  --body-font-size-s: 12px;
+  --body-font-size-xs: 11px;
+
+  /* heading sizes */
+  --heading-font-size-xxl: 32px;
+  --heading-font-size-xl: 25px;
+  --heading-font-size-l: 20px;
+  --heading-font-size-m: 17px;
+  --heading-font-size-s: 14px;
+  --heading-font-size-xs: 13px;
+
+  /* layout */
+  --section-padding: 10px;
+  --content-max-width: 1250px;
+  --nav-height: 70px;
+}

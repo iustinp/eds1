@@ -1,0 +1,151 @@
+/* columns-info-reveal: collapsible two-column info panel (source: #videobox on playinjector.com) */
+
+/* trigger paragraph (lives in the preceding default content; typography comes from the section style) */
+.columns-info-reveal-trigger {
+  cursor: pointer;
+}
+
+.columns-info-reveal-trigger:focus-visible {
+  outline: 2px solid currentcolor;
+  outline-offset: 2px;
+}
+
+/*
+ * The panel sits on the page background on the source, below the slate trigger strip.
+ * Paint a full-bleed dark band behind the expanded wrapper only (block-scoped, section CSS untouched).
+ * The negative bottom margin + matching padding lets the band cover the strip's 5px bottom padding.
+ */
+main .section .columns-info-reveal-wrapper.is-expanded {
+  margin-bottom: -5px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border-image: linear-gradient(var(--background-color), var(--background-color)) fill 0 / 0 / 0 100vmax 1px;
+}
+
+.columns-info-reveal {
+  position: relative;
+  max-width: 869px;
+  margin: 0 auto;
+  color: var(--text-color);
+  text-align: left;
+}
+
+.columns-info-reveal[hidden] {
+  display: none;
+}
+
+.columns-info-reveal > .columns-info-reveal-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-info-reveal .columns-info-reveal-col {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 20px 5%;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15px;
+  background-color: var(--light-color);
+}
+
+.columns-info-reveal .columns-info-reveal-col + .columns-info-reveal-col {
+  border: 2px solid var(--light-color);
+  font-size: 14px;
+  background-color: var(--background-color);
+}
+
+/* headings: source renders the h2 text through a 20px / 400 / underlined span */
+main .columns-info-reveal .columns-info-reveal-col h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 22px;
+  text-decoration: underline;
+  color: var(--text-color);
+}
+
+/* paragraphs: source separates every item with a one-line (15px) &nbsp; spacer */
+main .columns-info-reveal .columns-info-reveal-col p {
+  margin: 15px 0 0;
+  font-size: inherit;
+  line-height: 15px;
+  color: var(--text-color);
+}
+
+main .columns-info-reveal .columns-info-reveal-col > :first-child {
+  margin-top: 0;
+}
+
+/* quoted questions (paragraphs led by <em>) are set at 16px */
+main .columns-info-reveal .columns-info-reveal-col p:has(> em:first-child) {
+  font-size: 16px;
+}
+
+/* answers following the first question are indented 60px */
+main .columns-info-reveal .columns-info-reveal-col p:has(> em:first-child) ~ p:not(:has(> em:first-child)) {
+  padding-left: 60px;
+}
+
+.columns-info-reveal .columns-info-reveal-col strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.columns-info-reveal .columns-info-reveal-col a:any-link {
+  color: #337ab7;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.columns-info-reveal .columns-info-reveal-col a:hover {
+  text-decoration: underline;
+}
+
+.columns-info-reveal .columns-info-reveal-col img {
+  width: 100%;
+  height: auto;
+}
+
+/* close control: flat slate chevron, 90 x 19 (source: close-arrow.png) */
+.columns-info-reveal .columns-info-reveal-close {
+  display: block;
+  position: relative;
+  width: 90px;
+  height: 19px;
+  margin: 10px auto 2px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--light-color);
+  cursor: pointer;
+}
+
+.columns-info-reveal .columns-info-reveal-close:hover,
+.columns-info-reveal .columns-info-reveal-close:focus {
+  background: transparent;
+}
+
+.columns-info-reveal .columns-info-reveal-close::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: currentcolor;
+  clip-path: polygon(0 60%, 50% 1.5%, 100% 60%, 100% 97%, 50% 38.5%, 0 97%);
+}
+
+@media (width >= 900px) {
+  .columns-info-reveal > .columns-info-reveal-row {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .columns-info-reveal > .columns-info-reveal-row > .columns-info-reveal-col {
+    flex: 1 1 50%;
+    width: 50%;
+    min-height: 930px;
+
+    /* 2.5% of the row = 5% of each 50% column, matching the source's left/right: 5% inset */
+    padding: 20px 2.5% 0;
+  }
+}

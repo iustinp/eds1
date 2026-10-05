@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://www.playinjector.com/",
+  "path": "index",
+  "timestamp": "2026-10-01T20:17:54.916Z",
+  "title": "Playinjector - Shop",
+  "template": "home",
+  "blocks": [
+    "cards-game-stack",
+    "carousel-game-banner",
+    "columns-info-reveal",
+    "table-games"
+  ]
+}

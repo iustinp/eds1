@@ -1,0 +1,21 @@
+{
+  "variantName": "columns-info-reveal",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "dense",
+    "purpose": "audience-info-panel",
+    "imagePattern": "noimg",
+    "structure": "heading + paragraphs + link",
+    "layout": "2 columns, hidden until toggled by preceding text, close arrow"
+  },
+  "contentPattern": "Columns: 1 row x 2 cells; each cell = H2 + paragraphs (italic Q&A prompts preserved, empty &nbsp; spacer paragraphs dropped); right cell ends with 'Contact us now!' link to /contact",
+  "usage": {
+    "pagesUsing": [],
+    "reuseCount": 0,
+    "lastUsed": null
+  },
+  "options": [],
+  "memberVariantIds": []
+}
