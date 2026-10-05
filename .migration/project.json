@@ -1,0 +1,10 @@
+{
+  "type": "doc",
+  "sites": {
+    "eds1": {
+      "previewOrg": "iustinp",
+      "previewSite": "eds1",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

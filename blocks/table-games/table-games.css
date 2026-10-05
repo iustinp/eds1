@@ -1,0 +1,352 @@
+/* table-games: games catalog (toolbar + table + load more). Values from playinjector.com. */
+.table-games {
+  width: 100%;
+  color: var(--text-color);
+  font-size: var(--body-font-size-s);
+  line-height: 12px;
+}
+
+.table-games .table-games-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* toolbar: slate boxes like the source filter bar */
+.table-games .table-games-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 5px 2px;
+}
+
+.table-games .table-games-search,
+.table-games .table-games-sort {
+  box-sizing: border-box;
+  display: block;
+  padding: 3px 5px;
+  background-color: var(--light-color);
+}
+
+.table-games .table-games-search {
+  flex: 1 1 200px;
+}
+
+.table-games .table-games-sort {
+  flex: 1 1 190px;
+}
+
+.table-games .table-games-search input,
+.table-games .table-games-sort select {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 20px;
+  margin: 0;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.table-games .table-games-search input {
+  padding: 2px 5px;
+  border: 1px solid #ccc;
+  background-color: var(--muted-text-color);
+  color: #555;
+}
+
+.table-games .table-games-search input::placeholder {
+  color: #999;
+}
+
+.table-games .table-games-sort select {
+  padding: 0;
+  border: 0;
+  background-color: var(--light-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.table-games .table-games-scroller {
+  width: 100%;
+}
+
+.table-games table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* no visible header row on the source; kept for assistive tech */
+.table-games thead {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.table-games tbody[hidden],
+.table-games tr[hidden] {
+  display: none;
+}
+
+/* alternating rows; the details row shares its game row background */
+.table-games tbody.table-games-item {
+  background-color: var(--dark-color);
+}
+
+.table-games tbody.table-games-item:nth-of-type(even) {
+  background-color: #192130;
+}
+
+.table-games td p {
+  margin: 0;
+}
+
+/* game title doubles as the disclosure control for the description row */
+.table-games .table-games-toggle,
+.table-games .table-games-toggle:hover,
+.table-games .table-games-toggle:focus {
+  display: inline;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  white-space: normal;
+  overflow: visible;
+  cursor: pointer;
+  transition: none;
+}
+
+.table-games .table-games-has-details {
+  cursor: pointer;
+}
+
+.table-games .table-games-title {
+  margin: 0 0 5px;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.table-games .table-games-release,
+.table-games .table-games-meta {
+  font-size: var(--body-font-size-s);
+  line-height: 12px;
+}
+
+.table-games .table-games-col-image {
+  line-height: 0;
+}
+
+.table-games .table-games-col-image img {
+  display: block;
+  width: 100px;
+  max-width: 100%;
+  aspect-ratio: 100 / 87.5;
+  object-fit: cover;
+}
+
+.table-games .table-games-rating {
+  display: inline-flex;
+  font-size: 22px;
+  line-height: 22px;
+}
+
+/* empty stars are solid grey on the source (JS emits an outline glyph) */
+.table-games .table-games-star {
+  color: #6a7282;
+  font-size: 0;
+  line-height: 0;
+}
+
+.table-games .table-games-star::before {
+  content: "★";
+  display: block;
+  font-size: 22px;
+  line-height: 22px;
+}
+
+.table-games .table-games-star.is-filled {
+  color: #4a90d9;
+}
+
+/* platforms: the source shows icons; rendered here as small muted labels */
+.table-games .table-games-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.table-games .table-games-platform {
+  margin: 1px 2px;
+  color: var(--muted-text-color);
+  font-size: var(--body-font-size-xs);
+  line-height: 16px;
+}
+
+/* price: green BUY button look (green-price.jpg gradient) */
+.table-games .table-games-col-price p {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 90px;
+  padding: 8px 2px;
+  background-color: var(--accent-green);
+  background-image: linear-gradient(#00a314, #00640e);
+  color: var(--text-color);
+  font-size: var(--body-font-size-s);
+  line-height: 12px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* expanded description: slate panel with scroll, like the source */
+.table-games tbody tr.table-games-details td {
+  display: block;
+  padding: 10px 5px;
+  text-align: left;
+}
+
+.table-games .table-games-description {
+  max-width: 650px;
+  max-height: 226px;
+  margin: 0 auto;
+  padding: 8px 5px;
+  overflow-y: auto;
+  background-color: var(--light-color);
+  font-size: var(--body-font-size-s);
+  line-height: 13px;
+  text-align: justify;
+}
+
+.table-games .table-games-description p {
+  margin: 0 0 13px;
+}
+
+.table-games .table-games-description p:last-child {
+  margin-bottom: 0;
+}
+
+.table-games .table-games-empty {
+  margin: 0;
+  padding: 10px 5px;
+  text-align: center;
+}
+
+.table-games .table-games-load-more,
+.table-games .table-games-load-more:hover,
+.table-games .table-games-load-more:focus {
+  display: block;
+  margin: 0;
+  padding: 6px 29px;
+  border: 1px solid var(--background-color);
+  border-top-color: transparent;
+  background-color: var(--light-color);
+  color: var(--text-color);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.table-games .table-games-load-more:hover {
+  background-color: #46536b;
+}
+
+.table-games .table-games-load-more[hidden] {
+  display: none;
+}
+
+/* mobile: each game becomes a stacked record (thumbnail + details) */
+.table-games tbody tr.table-games-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 5px 10px;
+  padding: 10px;
+}
+
+.table-games tbody tr.table-games-row td {
+  display: block;
+  grid-column: 2;
+  padding: 0;
+}
+
+.table-games tbody tr.table-games-row td.table-games-col-image {
+  grid-column: 1;
+  grid-row: 1 / span 6;
+}
+
+.table-games tbody tr.table-games-row td:empty {
+  display: none;
+}
+
+@media (width >= 900px) {
+  .table-games .table-games-search {
+    flex: 0 0 200px;
+  }
+
+  .table-games tbody tr.table-games-row {
+    display: table-row;
+    padding: 0;
+  }
+
+  .table-games tbody tr.table-games-row td {
+    box-sizing: border-box;
+    display: table-cell;
+    padding: 10px 5px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .table-games tbody tr.table-games-row td.table-games-col-image {
+    width: 115px;
+    text-align: left;
+  }
+
+  .table-games tbody tr.table-games-row td.table-games-col-image img {
+    margin-left: 5px;
+  }
+
+  .table-games tbody tr.table-games-row td.table-games-col-game {
+    text-align: left;
+  }
+
+  .table-games tbody tr.table-games-row td.table-games-col-discount {
+    width: 110px;
+  }
+
+  .table-games tbody tr.table-games-row td.table-games-col-rating {
+    width: 119px;
+  }
+
+  .table-games tbody tr.table-games-row td.table-games-col-platforms {
+    width: 110px;
+    text-align: left;
+  }
+
+  .table-games tbody tr.table-games-row td.table-games-col-price {
+    width: 124px;
+  }
+
+  /* short vertical dividers (cell-border.png: 3px x 60px, right / centre) */
+  .table-games tbody tr.table-games-row td.table-games-col-game,
+  .table-games tbody tr.table-games-row td.table-games-col-discount,
+  .table-games tbody tr.table-games-row td.table-games-col-rating,
+  .table-games tbody tr.table-games-row td.table-games-col-platforms {
+    background-image: linear-gradient(var(--background-color), var(--background-color));
+    background-position: right 1px center;
+    background-repeat: no-repeat;
+    background-size: 3px 60px;
+  }
+
+  .table-games tbody tr.table-games-details td {
+    display: table-cell;
+  }
+}

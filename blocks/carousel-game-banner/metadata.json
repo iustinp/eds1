@@ -1,0 +1,21 @@
+{
+  "variantName": "carousel-game-banner",
+  "baseBlock": "carousel",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "purpose": "promo-banner-slider",
+    "imagePattern": "full-bleed",
+    "structure": "image only + dot indicators",
+    "layout": "single wide slide, fade transition"
+  },
+  "contentPattern": "Carousel: one row per slide; cell 1 = image only; cell 2 empty (no text overlay on source)",
+  "usage": {
+    "pagesUsing": [],
+    "reuseCount": 0,
+    "lastUsed": null
+  },
+  "options": [],
+  "memberVariantIds": []
+}

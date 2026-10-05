@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "projectType": "doc"
+  },
+  "templates": [
+    {
+      "name": "home",
+      "urls": [
+        "https://www.playinjector.com/"
+      ],
+      "representativeUrl": "https://www.playinjector.com/",
+      "description": "PlayInjector shop homepage: promo strip, featured games showcase (category links, game card stack, banner carousel), MyNI-SHOP info reveal, and games catalog with sidebar promo",
+      "urlPattern": "/",
+      "blocks": [
+        {
+          "name": "cards-game-stack",
+          "instances": [
+            "#homeGamesList"
+          ]
+        },
+        {
+          "name": "carousel-game-banner",
+          "instances": [
+            "#homeCarousel"
+          ]
+        },
+        {
+          "name": "columns-info-reveal",
+          "instances": [
+            "#videobox"
+          ]
+        },
+        {
+          "name": "table-games",
+          "instances": [
+            "#content > div.centerwrap .games-presentation"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "rc1",
+          "name": "promo-strip",
+          "selector": [
+            "#content > div.top-text"
+          ],
+          "style": "accent-strip",
+          "blocks": [],
+          "defaultContent": [
+            "#content > div.top-text"
+          ]
+        },
+        {
+          "id": "rc2",
+          "name": "featured-games-showcase",
+          "selector": [
+            "#content > div.top-container"
+          ],
+          "style": "dark, showcase",
+          "blocks": [
+            "cards-game-stack",
+            "carousel-game-banner"
+          ],
+          "defaultContent": [
+            "#homeGamesListNavigation"
+          ]
+        },
+        {
+          "id": "rc3",
+          "name": "myni-shop-info",
+          "selector": [
+            "#content > div.infotext",
+            "#infotext"
+          ],
+          "style": "accent-strip",
+          "blocks": [
+            "columns-info-reveal"
+          ],
+          "defaultContent": [
+            "#infotext"
+          ]
+        },
+        {
+          "id": "rc4",
+          "name": "games-catalog",
+          "selector": [
+            "#content > div.centerwrap"
+          ],
+          "style": "dark, sidebar-left",
+          "blocks": [
+            "table-games"
+          ],
+          "defaultContent": [
+            "#content > div.centerwrap .left-column .displayer-box"
+          ]
+        }
+      ]
+    }
+  ]
+}

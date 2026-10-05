@@ -1,0 +1,101 @@
+/* carousel-game-banner: image-only promo slider (source: #homeCarousel, 676x369 banners) */
+.carousel-game-banner {
+  position: relative;
+  width: 100%;
+  color: var(--text-color);
+}
+
+.carousel-game-banner .carousel-game-banner-viewport {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-game-banner .carousel-game-banner-slides,
+.carousel-game-banner .carousel-game-banner-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* all slides share one grid cell and cross-fade */
+.carousel-game-banner .carousel-game-banner-slides {
+  display: grid;
+}
+
+.carousel-game-banner .carousel-game-banner-slide {
+  grid-area: 1 / 1;
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s linear, visibility 0.1s linear;
+}
+
+.carousel-game-banner .carousel-game-banner-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.carousel-game-banner .carousel-game-banner-slide-image {
+  line-height: 0;
+}
+
+.carousel-game-banner .carousel-game-banner-slide-image a {
+  display: block;
+}
+
+/* banners are authored at 676x369; keep that ratio at every width (no cropping) */
+.carousel-game-banner .carousel-game-banner-slide-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 676 / 369;
+  object-fit: cover;
+}
+
+.carousel-game-banner .carousel-game-banner-slide-content {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 16px;
+}
+
+/* dots sit 1px below the banner, centred, 12px outer box with ~3px spacing */
+.carousel-game-banner .carousel-game-banner-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  padding: 1px 0 2px;
+  line-height: 12px;
+}
+
+.carousel-game-banner .carousel-game-banner-indicator {
+  display: flex;
+}
+
+.carousel-game-banner .carousel-game-banner-indicator button {
+  box-sizing: border-box;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 1px;
+  padding: 0;
+  border: 2px solid var(--light-color);
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.carousel-game-banner .carousel-game-banner-indicator button[aria-current='true'] {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  background-color: #217fbc;
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-game-banner .carousel-game-banner-slide {
+    transition: none;
+  }
+}

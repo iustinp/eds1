@@ -1,0 +1,21 @@
+{
+  "variantName": "cards-game-stack",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "featured-games-stack",
+    "imagePattern": "cover-image",
+    "structure": "title + rating + image + price + buy CTA + platform icons",
+    "layout": "cascading stacked pile (one visible card)"
+  },
+  "contentPattern": "Cards: one row per item; cell 1 = cover/logo image; cell 2 = title (heading), rating text (e.g. '3 stars'), price, platforms text, CTA link ('Buy!' / 'Get it now!' / 'Help fund this game!')",
+  "usage": {
+    "pagesUsing": [],
+    "reuseCount": 0,
+    "lastUsed": null
+  },
+  "options": [],
+  "memberVariantIds": []
+}
